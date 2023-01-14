@@ -51,12 +51,11 @@ function getTempq(response) {
   h2.innerHTML = response.data.name;
    status.innerHTML = Math.round(response.data.main.temp)+" ° | "+response.data.weather[0].main;
  
-  low.innerHTML = "L:"+Math.round(response.data.main.temp_min)+"°";
+   low.innerHTML = "L:" + Math.round(response.data.main.temp_min) + "°";
   high.innerHTML = "H:" + Math.round(response.data.main.temp_max) + "°";
   
   let pic = response.data.weather[0].icon;
   document.getElementById("status-pic").src = "http://openweathermap.org/img/wn/"+pic+"@2x.png";
-  alert("http://openweathermap.org/img/wn/" + pic + "@2x.png");
   forecast(response.data.name);
 
 }
@@ -94,7 +93,7 @@ function showf(response){
             element.querySelector("#day").innerHTML = convertDay(day);
             element.querySelector("#time").innerHTML = day.getHours()+":0"+day.getMinutes();
             let pic= response.data.list[index].weather[0].icon;
-            element.querySelector("#pic").src = "http://openweathermap.org/img/wn/" + pic + "@2x.png";
+            element.querySelector("#pic").src = "http://openweathermap.org/img/wn/"+pic+"@2x.png";
             let temp=Math.round( response.data.list[index].main.temp);
             element.querySelector(".temp1").innerHTML=temp;
 
