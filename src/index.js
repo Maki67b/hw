@@ -55,7 +55,7 @@ function getTempq(response) {
   high.innerHTML = "H:" + Math.round(response.data.main.temp_max) + "°";
   
   let pic = response.data.weather[0].icon;
-  document.getElementById("status-pic").src = "http://openweathermap.org/img/wn/" + pic + "@2x.png";
+  document.getElementById("status-pic").src = "http://openweathermap.org/img/wn/"+pic+"@2x.png";
   alert("http://openweathermap.org/img/wn/" + pic + "@2x.png");
   forecast(response.data.name);
 
