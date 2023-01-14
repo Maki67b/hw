@@ -31,7 +31,7 @@ function search(event) {
     "&appid=f3887e262c88d1158f7e2ef4998e234c&units=metric";
  
   axios.get(apiUrl).then(find);
-  forecast(city);
+
 }
 function find(response) {
     let lat = response.data.coord.lat;
@@ -56,6 +56,7 @@ function getTempq(response) {
   
   let pic = response.data.weather[0].icon;
   document.getElementById("status-pic").src = "http://openweathermap.org/img/wn/" + pic + "@2x.png";
+  forecast(response.data.name);
 
 }
 
@@ -67,7 +68,7 @@ function getCurrent() {
 function showPosition(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    console.log(position);
+
     let apiUrl1 =
       "https://api.openweathermap.org/data/2.5/weather?lat=" +
       lat +
