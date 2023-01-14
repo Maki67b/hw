@@ -56,6 +56,7 @@ function getTempq(response) {
   
   let pic = response.data.weather[0].icon;
   document.getElementById("status-pic").src = "http://openweathermap.org/img/wn/" + pic + "@2x.png";
+  alert("http://openweathermap.org/img/wn/" + pic + "@2x.png");
   forecast(response.data.name);
 
 }
